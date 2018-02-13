@@ -1,0 +1,15 @@
+<div class="row">
+  <div>
+      <input type="number" [value]="amount">
+      <select model="currency" ng-options="currency "></select>
+      <input type="button" value="Charge" ng-click="$ctrl.charge();">
+  </div>
+  <div class=".text-center">
+      <h1 class="errorMessage" *ngIf="message != ''">
+          {{message}}
+      </h1>
+      <h1 class="successMessage" *ngIf="successMessage!=''">
+          {{successMessage}}
+      </h1>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="row">
+  <div>
+      <select ng-model="selectedPair" ng-options="c for c in $ctrl.pairsOptions"></select>
+      <br>
+      <input type="number" ng-model="ratio" />
+      <br>
+      <input type="button" value="Exchange" (click)="makeExchange();" />
+  </div>
+  <div class=".text-center">
+      <h1 class="errorMessage" *ngIf="message != ''">
+          {{message}}
+      </h1>
+      <h1 class="successMessage" *ngIf="successMessage!=''">
+          {{successMessage}}
+      </h1>
+  </div>
+</div>
