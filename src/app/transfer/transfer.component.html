@@ -1,10 +1,10 @@
 <div class="row">
-  <div class=".text-center">
+  <div class="">
       <input name="amount" id="amount" [value]="" type="number">
       <select  ng-options="item for item in ctrl.transactionOptions"></select>
       <input value="" name="transfer" id="transfer" value="Make Transaction" type="button" (click)="$ctrl.makeTransaction();">
   </div>
-  <div class=".text-center">
+  <div class="">
       <h1 class="errorMessage" *ngIf="message != ''">
           {{message}}
       </h1>

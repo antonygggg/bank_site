@@ -1,4 +1,4 @@
-<div class="row">
+<div class="">
   <div>
       <select ng-model="selectedPair" ng-options="c for c in $ctrl.pairsOptions"></select>
       <br>
@@ -6,7 +6,7 @@
       <br>
       <input type="button" value="Exchange" (click)="makeExchange();" />
   </div>
-  <div class=".text-center">
+  <div class="">
       <h1 class="errorMessage" *ngIf="message != ''">
           {{message}}
       </h1>
@@ -14,7 +14,7 @@
           {{successMessage}}
       </h1>
   </div>
-  <div class=" .text-center">
+  <div class=" ">
     <span>Currencies</span>
     <table>
       <thead>
