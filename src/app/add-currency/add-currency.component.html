@@ -1,0 +1,28 @@
+<div class=".text-center">
+  <div class=" .text-center">
+    <input type="text" [value]="currencyName" />
+    <input type="number" [value]="ratioToDollar" />
+    <input type="button" value="Add Currency" />
+  </div>
+  <div class=" .text-center">
+    <h1 class="errorMessage" *ngIf="message != ''">
+      {{message}}
+    </h1>
+    <h1 class="successMessage" *ngIf="successMessage!=''">
+      {{successMessage}}
+    </h1>
+  </div>
+  <div class=" .text-center">
+    <span>Currencies</span>
+    <table>
+      <thead>
+        <td>name</td>
+        <td>ratio</td>
+      </thead>
+      <tr *ngFor="let item of allCurrencies">
+        <td>{{item.name}}</td>
+        <td>{{item.ratio}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

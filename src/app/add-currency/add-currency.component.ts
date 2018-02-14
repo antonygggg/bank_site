@@ -1,22 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { UtilService } from '../services/util.service'
-import { ResultObject } from '../models/result-object'
+import { ResultObject } from '../models/result-object';
+
 
 @Component({
-  selector: 'app-add-exchange',
-  templateUrl: './add-exchange.component.html',
-  styleUrls: ['./add-exchange.component.css']
+  selector: 'app-add-currency',
+  templateUrl: './add-currency.component.html',
+  styleUrls: ['./add-currency.component.css']
 })
-export class AddExchangeComponent implements OnInit {
+export class AddCurrencyComponent implements OnInit {
 
-  currencyPair = '';
-  ratio = 0.0;
-  pairsOptions = null;
-  selectedPair = null;
-  allExchanges = null;
-
+  currencyName = '';
+  ratioToDollar = 0.0;
   message = '';
   successMessage = '';
+  allCurrencies = null;
 
   constructor(private util: UtilService) { }
 
@@ -25,21 +23,20 @@ export class AddExchangeComponent implements OnInit {
   }
 
   loadComponent() {
-    let res : ResultObject = this.util.exchangeGetAll();
+    let res: ResultObject = this.util.currencyGetAll();
     if(res.success){
-      this.allExchanges = res.resObj;
+      this.allCurrencies = res.resObj;
     }
     else{
       this.successMessage = '';
-      this.message = 'there was error loading exchanges'
-      this.allExchanges = null;
+      this.message = 'there was error loading currencies'
+      this.allCurrencies = null;
     }
-
   }
 
-  addExchange(fromId, toId , ratio) {
+  AddCurrency() {
     //let qs = '?currencyName=' + this.currencyName + '&ratioToDollar=' + this.ratioToDollar;
-    let res: ResultObject = this.util.exchangeAdd(fromId,toId,ratio);
+    let res: ResultObject = this.util.currencyAdd(this.currencyName, this.ratioToDollar);
     if (res && res.success !== false) {
       this.message = '';
       this.successMessage = 'new currency has been added successfully';

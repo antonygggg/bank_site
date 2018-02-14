@@ -7,6 +7,10 @@ import { TransferComponent } from './transfer/transfer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ChargeComponent } from './charge/charge.component';
 import { AddExchangeComponent } from './add-exchange/add-exchange.component';
+import { AddCurrencyComponent } from './add-currency/add-currency.component';
+
+import { UtilService } from './services/util.service'
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,12 +19,13 @@ import { AddExchangeComponent } from './add-exchange/add-exchange.component';
     TransferComponent,
     ChargeComponent,
     AddExchangeComponent,
+    AddCurrencyComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [UtilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

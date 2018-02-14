@@ -14,4 +14,19 @@
           {{successMessage}}
       </h1>
   </div>
+  <div class=" .text-center">
+    <span>Currencies</span>
+    <table>
+      <thead>
+        <td>from</td>
+        <td>to</td>
+        <td>ratio</td>
+      </thead>
+      <tr *ngFor="let item of allExchanges">
+        <td>{{item.from}}</td>
+        <td>{{item.to}}</td>
+        <td>{{item.ratio}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
